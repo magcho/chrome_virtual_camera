@@ -9,28 +9,16 @@
   },
   "content_scripts": [
     {
-      "matches": [
-        "http://localhost:*/*",
-        "http://127.0.0.1:*/*",
-        "https://mganeko.github.io/*",
-        "https://meet.google.com/*",
-        "https://sora-labo.shiguredo.jp/*"
-      ],
-      "js": [
-        "loader.js"
-      ],
+      "matches": ["https://*/*"],
+      "js": ["loader.js"],
       "run_at": "document_start"
     }
   ],
-  "host_permissions": [
-    "http://localhost:*/",
-    "http://127.0.0.1:*/",
-    "https://mganeko.github.io/",
-    "https://meet.google.com/",
-    "https://sora-labo.shiguredo.jp/"
-  ],
-  "web_accessible_resources": [{
-    "resources": ["cs.js"],
-    "matches": ["https://*/*"]
-  }]
+  "host_permissions": ["https://*/*"],
+  "web_accessible_resources": [
+    {
+      "resources": ["cs.js"],
+      "matches": ["https://*/*"]
+    }
+  ]
 }
